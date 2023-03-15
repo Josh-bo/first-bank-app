@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body id="body">
+    <div>
+        <div class="background text-light" id="back">
+          <div class="row p-3">
+            <div id="usersname" class=" col-sm-3 col-md-6 col-lg-12">
+                <span class="fs-4">Bamidele Joshua Olayinka</span>
+                <img src="/profile.jpg" width="30px" style="border-radius: 60px; height: 4vh;">
+
+                <div class="text-end">
+                    <button class="btn btn-info" onclick="backout()">LOG-OUT</button>
+                </div>
+            </div>
+
+            <hr class="mt-3">
+            <div class=" col-sm-3 col-md-6 col-lg-12 text-light text-end pe-3 fs-3"> ₦ <span id="balance">0.00</span></div>
+          </div>
+
+         <div class="p-3">
+            <div>
+               <div class=""><b>ACCOUNT NUMBER</b></div>
+                <div id="userAccount" class="ps-3">2227729441</div>
+            </div>
+
+            <div class="mt-3">
+               <div class=""><b>CARD NUMBER</b></div>
+                <div id="userAccount" class="ps-2">533*************129</div>
+            </div>
+
+            <div class="mt-3 ps-3">
+                <div class=""><b>CARD TYPE</b></div>
+                 <div id="userAccount" class="ps-2">SAVINGS</div>
+             </div>
+            </div>
+
+            <div>
+                <div class="text-end pe-4"><b>Loan borrowed</b> ₦ 0.00 </div>
+            </div>
+        </div>
+
+        <div class="border p-2 text-end dark" id="output"> <b id="bold"  onclick="dark()">Dark Mode</b></div>
+
+        <div class="p-3 row">
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+               <a href="/deposit.html" class="nav-link">
+                <div class="border p-3 color over">
+                    <div><b>DEPOSIT</b></div>
+                </div>
+               </a>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="withd(), button()">
+                <div class="border p-3 bg-success over">
+                    <div><b>WITHDRAWAL</b></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <div class="border p-3 bg-warning over">
+                    <div><b>TRANSFER</b></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <div class="border p-3 bg-primary over">
+                    <div><b>BUY AIRTIME</b></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <div class="border p-3 bg-secondary over">
+                    <div><b>PAY LOAN</b></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <div class="border p-3 bg-danger over">
+                    <div><b>CHECK HISTORY</b></div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <a href="/deposit.html" class="nav-link">
+                 <div class="border p-3 loan over">
+                     <div><b>BORROW LOAN</b></div>
+                 </div>
+                </a>
+             </div>
+
+             <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <a href="/deposit.html" class="nav-link">
+                 <div class="border p-3 tomato over">
+                     <div><b>BUY DATA</b></div>
+                 </div>
+                </a>
+             </div>
+
+             <div class="col-sm-12 col-md-4 col-lg-4 text-center my-2" onclick="button()">
+                <a href="/deposit.html" class="nav-link">
+                 <div class="border p-3 teal over">
+                     <div><b>PAY BILLS</b></div>
+                 </div>
+                </a>
+             </div>
+        </div>
+    </div>
+
+    <script src="/index.js"></script>
+</body>
+</html>

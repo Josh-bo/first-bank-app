@@ -1,0 +1,42 @@
+.background{
+    height: 60vh;
+    background-image:linear-gradient(to top, rgb(182, 46, 46), blue);
+}
+body{
+    overflow-x: hidden;
+}
+.color{
+    background-color: aqua;
+}
+.over:hover {
+    background-color: white !important;
+}
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: transparent;
+}
+.bord{
+    border: 1px solid white;
+    width: 50vw;
+}
+.box{
+    display: flex;
+}
+.box img{
+    margin-left: -40px;
+}
+.teal{
+    background-color:teal;
+}
+.tomato{
+    background-color: tomato;
+}
+.loan{
+    background-color: orchid;
+}
+.dark:hover{
+    color: blue;
+}

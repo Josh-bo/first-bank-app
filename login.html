@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mx-auto mt-5 border rounded w-75 p-3">
+                
+                <h1 class="text-center">LOG IN</h1>
+                <hr>
+                
+                <div id="error"></div>
+             <div class="row">
+                  <div  class="col-sm-12 col-md-6 col-lg-12 my-2">
+                    <legend>E-MAIL</legend>
+                    <input type="text" class="form-control" id="em">
+                  </div>
+
+                  <div  class="col-sm-12 col-md-6 col-lg-12 my-2">
+                    <legend>PASSWORD</legend>
+                    <input type="text" class="form-control" minlength="7" id="ps">
+                  </div>
+
+                  <button class="btn btn-primary" onclick="login()">LOG IN</button>
+                  <button class="btn btn-danger my-2" onclick="back()">PREVIOUS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let everyDetails = JSON.parse(localStorage.getItem('allUsersData'))
+       console.log(everyDetails) 
+
+        const login = () => {
+            let userEmail = em.value
+            let userPass = ps.value
+            let found = false
+
+            if(em.value == "" || ps.value == ""){
+                error.innerHTML = `
+                   <b class="text-danger" style="font-size:18px;"> Fill in the form correctly </b>`
+
+                   setTimeout(() => {
+                    error.innerHTML = ""                    
+                }, 3000);
+            }else{            
+            let newthings = everyDetails.find((eachUser, i,) => {
+                 return eachUser.email == userEmail && eachUser.password == userPass
+            })
+            console.log(newthings)
+
+                if(newthings == undefined) {
+                    error.innerHTML = `
+                    <b class="text-danger" style="font-size:25px;">Incorrect Details</b>`
+                    
+                    setTimeout(() => {
+                    error.innerHTML = ""                    
+                }, 3000);
+                }
+            
+            }
+        }
+
+        const back = () => {
+            window.location = `index.html`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>
+<body>
+    <form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mx-auto mt-5 border rounded w-75 p-3">
+                <h1 class="text-center">SIGN UP</h1><hr>
+
+             <div class="row">
+                 <div id="error" class="text-center"></div>
+
+                <div class="col-sm-12 col-md-6 col-lg-6 my-2">
+                    <legend>SURNAME</legend>
+                    <input type="text" class="form-control" id="sn">
+                  </div>
+                  
+                  <div  class="col-sm-12 col-md-6 col-lg-6 my-2">
+                    <legend>FIRSTNAME</legend>
+                    <input type="text" class="form-control" id="fn">
+                  </div>
+
+                  <div  class="col-sm-12 col-md-6 col-lg-6 my-2">
+                    <legend>LASTNAME</legend>
+                    <input type="text" class="form-control" id="ln">
+                  </div>
+
+                  <div  class="col-sm-12 col-md-6 col-lg-6 my-2">
+                    <legend>E-MAIL</legend>
+                    <input type="text" class="form-control" id="em">
+                  </div>
+
+                  <div  class="col-sm-12 col-md-6 col-lg-6 my-2">
+                    <legend>PASSWORD</legend>
+                    <input type="text" class="form-control" minlength="7" id="ps">
+                  </div>
+
+                  <div  class="col-sm-12 col-md-6 col-lg-6 my-2">
+                    <legend>CONFIRM PASSWORD</legend>
+                    <input type="text" class="form-control" minlength="7" id="cps">
+                  </div>
+
+                 <div id="err" class="text-center"></div>
+
+                  <button class="btn btn-primary my-2" onclick="con()">CONFIRM</button>
+
+                </div>
+
+               <div class="text-center">
+                <input type="checkbox" onclick="checkBox()"> Already have an account
+               </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+    <script>
+
+        let storeData = []
+
+        if(localStorage.allUserData){
+            let oldData = JSON.parse(localStorage.getItem("allUsersData"))
+            storeData = oldData
+        }
+
+
+        const con = () => {
+            if(sn.value == "" || fn.value == "" || fn.value == "" || ln.value == "" && em.value == "" || ps.value == "" || cps.value == ""){
+                error.innerHTML = `
+                   <b class="text-danger" style="font-size:18px;"> Fill in the form correctly  </b>
+                `
+                err.innerHTML = `
+                   <b class="text-danger" style="font-size:18px;"> Fill in the form correctly </b>
+                `
+
+                setTimeout(() => {
+                    error.innerHTML = ""                    
+                    err.innerHTML = ""                    
+                }, 3000);
+
+            }else{
+            let eachUserData = {
+                surname : sn.value,
+                firstname : fn.value,
+                lastname : ln.value,
+                email : em.value,
+                password : ps.value,
+                conpassword : cps.value,
+                UsersPersonalDetails : []
+            }
+
+            storeData.push(eachUserData)
+            console.log(storeData)
+
+            localStorage.setItem('allUsersData', JSON.stringify(storeData))
+            window.location = `login.html`
+
+            sn.value = ""
+            fn.value = ""
+            ln.value = ""
+            em.value = ""
+            ps.value = ""
+            cps.value = ""
+        }
+    }
+
+    const checkBox = () => {
+        setTimeout(() => {
+            window.location = `login.html`
+        }, 1000);
+    }
+    </script>
+</body>
+</html>
